@@ -262,26 +262,36 @@
 
   <script>
     // Простая логика localStorage для сохранения чеков
-    document.getElementById('saveState').addEventListener('click', function(){
-      localStorage.setItem('apple_check_saved','1');
-      alert('Локальные отметки включены — браузер будет сохранять прогресс на этом устройстве.');
-    });
+    (function(){
+      const saveBtn = document.getElementById('saveState');
+      if(saveBtn){
+        saveBtn.addEventListener('click', function(){
+          localStorage.setItem('apple_check_saved','1');
+          alert('Локальные отметки включены — браузер будет сохранять прогресс на этом устройстве.');
+        });
+      }
 
-    // Сохранять состояние чекбоксов и анимировать tick
-    const checks = document.querySelectorAll('.chk');
-    checks.forEach(ch => {
-      const key = 'chk_'+(ch.dataset.for||'')
-      const val = localStorage.getItem(key);
-      if(val==='1') ch.checked = true;
-      ch.addEventListener('change', ()=>{
-        localStorage.setItem(key, ch.checked ? '1' : '0');
+      // Сохранять состояние чекбоксов и анимировать tick
+      const checks = document.querySelectorAll('.chk');
+      checks.forEach(ch => {
+        const key = 'chk_'+(ch.dataset.for||'')
+        const val = localStorage.getItem(key);
+        if(val==='1') ch.checked = true;
+        ch.addEventListener('change', ()=>{
+          try{ localStorage.setItem(key, ch.checked ? '1' : '0'); }catch(e){ /* ignore storage errors */ }
+        });
       });
-    });
 
-    // Service worker регистрация
-    if('serviceWorker' in navigator){
-      navigator.serviceWorker.register('./sw.js').catch(()=>{/* ignore */});
-    }
+      // Service worker регистрация — логируем ошибки, чтобы скрипт не падал
+      if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('./sw.js').then(reg=>{
+          // registration ok
+          console.log('SW registered:', reg.scope);
+        }).catch(err=>{
+          console.warn('SW registration failed:', err);
+        });
+      }
+    })();
 
     // PWA install hint (Safari) — покажем подсказку
     function showInstallHint(){
