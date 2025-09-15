@@ -4,7 +4,8 @@ const toCache = [
   './index.html',
   './manifest.json',
   './shortcut-instructions.html',
-  './open-checklist.shortcut.txt'
+  './open-checklist.shortcut.txt',
+  './optimize.html'
 ];
 
 self.addEventListener('install', event => {
