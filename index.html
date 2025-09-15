@@ -19,16 +19,17 @@
       --header-to:#0891b2;
       --text:#0f172a;
     }
-    :root.dark{
-      --bg:#0b1220; /* darker base for strong contrast */
-      --card:#0f1a26; /* solid card background in dark mode */
-      --muted:#9aa6af;
-      --accent:#38c7c4;
-      --accent-2:#ff9d6a;
-      --header-from:#07636f;
-      --header-to:#06323b;
-      --text:#ffffff; /* ensure readable */
-    }
+      /* Dark theme variables */
+      :root.dark{
+        --bg:#0b1220; /* darker base for strong contrast */
+        --card:#0f1a26; /* solid card background in dark mode */
+        --muted:#9aa6af;
+        --accent:#38c7c4;
+        --accent-2:#ff9d6a;
+        --header-from:#07636f;
+        --header-to:#06323b;
+        --text:#ffffff; /* ensure readable */
+      }
     /* dark theme uses root variables only (restored to previous readable style) */
     body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:var(--text);overflow-y:scroll;transition:background .24s,color .24s}
     /* animated gradient header */
@@ -309,6 +310,10 @@
 
   <footer>
     Сделано автономно — откройте и добавьте на главный экран. © Проверка Apple
+    <div style="margin-top:10px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a class="btn" id="saveState" href="#">Сохранить</a>
+      <button class="btn secondary" id="resetChecks" title="Удалить все сохранённые отметки">Сбросить отметки</button>
+    </div>
   </footer>
 
   <!-- Theme toggle -->
