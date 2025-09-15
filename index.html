@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Проверка Apple — автономный чек-лист</title>
+  <link rel="manifest" href="./manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABFUlEQVR4nO3WQQrAIBAEQb3/6arS1l2hBq0W7j8k0sYkz9QH8cQAAAAAAAAAAAAAA4G8Zk78s9mS3JvtxjafO9Y2z3H1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m5w6A7zIvy8Zk3XQAAAABJRU5ErkJggg==">
+  <style>
+    :root{--bg:#fbfbfd;--card:#fff;--muted:#6b7280;--accent:#0ea5a4}
+    body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#0f172a}
+    header{background:linear-gradient(90deg,#06b6d4, #0891b2); color:white; padding:28px 18px}
+    .wrap{max-width:900px;margin:18px auto;padding:0 16px}
+    .devices{display:flex;gap:10px;flex-wrap:wrap}
+    .device{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);padding:14px;flex:1;min-width:220px}
+    .device h3{margin:0 0 8px}
+    .device p{margin:0;color:var(--muted)}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-right:12px}
+    section.card{background:var(--card);padding:16px;border-radius:12px;margin:12px 0}
+    .checklist{list-style:none;padding:0;margin:0}
+    .checklist li{padding:10px 8px;border-bottom:1px solid #f1f5f9;display:flex;gap:12px;align-items:flex-start}
+    .checklist li:last-child{border-bottom:0}
+    .step{flex:1}
+    .kbd{background:#f8fafc;border-radius:6px;padding:4px 8px;font-size:13px;color:#0f172a}
+    details summary{cursor:pointer;padding:8px;list-style:none}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-block;background:var(--accent);color:white;padding:8px 12px;border-radius:8px;text-decoration:none}
+    footer{font-size:13px;color:var(--muted);padding:20px;text-align:center}
+    .muted{color:var(--muted)}
+    .screenshot{max-width:100%;border-radius:8px;margin-top:8px;border:1px solid #e6eef0}
+    .link-local{color:#0369a1}
+    @media (max-width:520px){.devices{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1 style="margin:0">Автономный чек‑лист — Проверка б/у Apple устройств</h1>
+      <p style="margin:6px 0 0;opacity:0.95">Откройте этот файл в Safari на iPhone/iPad и добавьте на главный экран — использовать можно без интернета.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Выберите устройство</h2>
+      <div class="devices">
+        <div class="device">
+          <h3>iPhone</h3>
+          <p>Полный чек‑лист проверки работоспособности, настроек, активации и приватности.</p>
+          <div class="actions"><a class="btn" href="#iphone">Открыть iPhone</a></div>
+        </div>
+
+        <div class="device">
+          <h3>iPad</h3>
+          <p>Отдельные проверки для iPad: экран, перо, разъёмы и привязки.</p>
+          <div class="actions"><a class="btn" href="#ipad">Открыть iPad</a></div>
+        </div>
+
+        <div class="device">
+          <h3>Apple Watch</h3>
+          <p>Чек‑лист для часов: сопряжение, датчики, корпус и ремешки.</p>
+          <div class="actions"><a class="btn" href="#watch">Открыть Watch</a></div>
+        </div>
+      </div>
+    </section>
+
+  <section id="iphone" class="card">
+      <h2>Проверка iPhone</h2>
+      <p class="muted">Следуйте шагам — отмечайте галочками (локально) по мере проверки.</p>
+
+      <details open>
+        <summary><strong>1. Внешний осмотр и комплект</strong></summary>
+        <ul class="checklist">
+          <li><div class="step"><strong>Корпус и экран</strong><div class="muted">Проверьте царапины, вмятины, зазоры, люфты кнопок и экран на битые пиксели.</div></div></li>
+          <li><div class="step"><strong>Камеры и микрофон</strong><div class="muted">Сделайте фото передней и задней камерой, запишите голос в "Голосовые заметки".</div></div></li>
+          <li><div class="step"><strong>Зарядка и разъём</strong><div class="muted">Подключите кабель — заряд идёт? Попробуйте Wireless зарядку (если поддерживается).</div></div></li>
+          <li><div class="step"><strong>SIM и лоток</strong><div class="muted">Откройте лоток, вставьте сим — телефон видит сеть?</div></div></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary><strong>2. Проверка активации и учётной записи</strong></summary>
+        <ul class="checklist">
+          <li><div class="step"><strong>Проверить iCloud / Activation Lock</strong><div class="muted">Откройте "Настройки" → ваше имя: если устройство всё ещё связано с Apple ID предыдущего владельца — попросите снять привязку. Для полной проверки можно перезагрузить устройство и посмотреть, не потребуется ли при активации Apple ID предыдущего владельца.</div></div></li>
+          <li><div class="step"><strong>Убедиться в выходе из iCloud</strong><div class="muted">Если в Настройках отображается Apple ID — попросите выйти и удалить устройство из учётной записи через iCloud.com. Activation Lock блокирует активацию при смене владельца.</div></div></li>
+          <li><div class="step"><strong>Проверка IMEI/серийного номера</strong><div class="muted">Настройки → Основные → Об этом устройстве. Сверьте IMEI/серийный номер с лотком/коробкой. Чтобы проверить, не числится ли устройство в розыске/в черном списке — используйте сервисы проверки IMEI (введите IMEI только на проверенных сайтах).</div></div></li>
+          <li><div class="step"><strong>Проверка Carrier/Locked</strong><div class="muted">Вставьте SIM другой сети: телефон должен показать сеть и иметь возможность совершать звонки/мобильный интернет, если устройство не заблокировано оператором.</div></div></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary><strong>3. Аппаратные и сенсорные тесты</strong></summary>
+        <ul class="checklist">
+          <li data-key="screen"><div class="step"><strong>Экран</strong><div class="muted">Откройте белый/чёрный фон: загрузите фото полного белого и полного чёрного фона (или используйте браузер). Медленно водите пальцем по краям экрана — нет ли «мертвых зон» или проблемы с тачем. Для поиска битых пикселей увеличьте яркость и просмотрите одинаковые цвета.</div>
+            <figure class="screenshot" title="Пример: меню 'Экран и яркость'">
+              <!-- Простая SVG-иллюстрация: Настройки → Экран и яркость -->
+              <svg width="260" height="150" viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Экран и яркость">
+                <rect x="0" y="0" width="260" height="150" rx="12" fill="#ffffff" stroke="#e6eef0"/>
+                <rect x="12" y="12" width="236" height="22" rx="6" fill="#f3f4f6"/>
+                <text x="22" y="28" font-size="12" fill="#0f172a">Настройки</text>
+                <rect x="12" y="46" width="236" height="28" rx="6" fill="#f8fafc"/>
+                <text x="22" y="64" font-size="13" fill="#0f172a">Экран и яркость</text>
+                <rect x="22" y="86" width="216" height="12" rx="6" fill="#e6eef0"/>
+                <circle cx="48" cy="92" r="4" fill="#06b6d4"/>
+              </svg>
+            </figure>
+          </div><label style="margin-left:auto"><input type="checkbox" class="chk" data-for="screen"/></label></li>
+          <li data-key="sensors"><div class="step"><strong>Датчики</strong><div class="muted">Проверьте акселерометр (поворот экрана), сенсор приближения во время звонка, автояркость. Настройки → Универсальный доступ → Касание / AssistiveTouch для дополнительной диагностики.</div></div><label style="margin-left:auto"><input type="checkbox" class="chk" data-for="sensors"/></label></li>
+          <li data-key="audio"><div class="step"><strong>Динамики и микрофон</strong><div class="muted">Проиграйте музыку, сделайте голосовое сообщение, используйте громкую связь и Speakerphone в звонке. Проверьте запись и воспроизведение — нет шипения.</div></div><label style="margin-left:auto"><input type="checkbox" class="chk" data-for="audio"/></label></li>
+          <li data-key="net"><div class="step"><strong>Bluetooth/Wi‑Fi</strong><div class="muted">Подключитесь к Wi‑Fi и Bluetooth устройствам (наушники). Проверьте стабильность соединения и передачу аудио.</div></div><label style="margin-left:auto"><input type="checkbox" class="chk" data-for="net"/></label></li>
+          <li data-key="auth"><div class="step"><strong>Face ID / Touch ID</strong><div class="muted">Добавьте отпечаток или протестируйте Face ID (продавец должен авторизовать или помочь). Убедитесь, что разблокировка работает корректно.</div></div><label style="margin-left:auto"><input type="checkbox" class="chk" data-for="auth"/></label></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary><strong>4. Батарея и производительность</strong></summary>
+        <ul class="checklist">
+          <li><div class="step"><strong>Состояние батареи</strong><div class="muted">Настройки → Батарея → Состояние батареи: проверьте максимум ёмкости (Max Capacity) и состояние пиковой производительности.</div>
+            <figure class="screenshot" title="Пример: Состояние батареи">
+              <svg width="260" height="120" viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Состояние батареи">
+                <rect x="0" y="0" width="260" height="120" rx="10" fill="#fff" stroke="#e6eef0"/>
+                <text x="18" y="26" font-size="13" fill="#0f172a">Настройки → Батарея</text>
+                <rect x="18" y="36" width="220" height="18" rx="6" fill="#f8fafc"/>
+                <text x="22" y="50" font-size="12" fill="#0f172a">Состояние батареи</text>
+                <rect x="22" y="66" width="160" height="10" rx="5" fill="#e6eef0"/>
+                <text x="22" y="84" font-size="11" fill="#6b7280">Максимальная ёмкость: 88%</text>
+              </svg>
+            </figure>
+          </div></label></li>
+          <li><div class="step"><strong>Тест зарядки</strong><div class="muted">Подключите на 10–15 минут и проверьте, что заряд растёт без скачков.</div></div></li>
+          <li><div class="step"><strong>Производительность</strong><div class="muted">Откройте несколько приложений, поиграйте 1–2 минуты в требовательную игру: нет перегрева и сильных тормозов?</div></div></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary><strong>5. Приватность и оптимизация (рекомендации)</strong></summary>
+        <ul class="checklist">
+          <li data-key="analytics"><div class="step"><strong>Отключить Слежение и Улучшение</strong><div class="muted">Настройки → Конфиденциальность и безопасность → Аналитика и улучшения: отключите 'Делиться аналитикой' и 'Улучшение Siri'.</div>
+            <figure class="screenshot" title="Пример: Аналитика и улучшения">
+              <svg width="260" height="110" viewBox="0 0 260 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Аналитика и улучшения">
+                <rect x="0" y="0" width="260" height="110" rx="10" fill="#fff" stroke="#e6eef0"/>
+                <text x="18" y="26" font-size="13" fill="#0f172a">Конфиденциальность и безопасность</text>
+                <rect x="18" y="36" width="220" height="20" rx="6" fill="#f8fafc"/>
+                <text x="22" y="50" font-size="12" fill="#0f172a">Аналитика и улучшения</text>
+                <rect x="22" y="64" width="120" height="10" rx="6" fill="#e6eef0"/>
+                <text x="22" y="82" font-size="11" fill="#6b7280">Делиться аналитикой — выкл.</text>
+              </svg>
+            </figure>
+          </div><label style="margin-left:auto"><input type="checkbox" class="chk" data-for="analytics"/></label></li>
+          <li data-key="location"><div class="step"><strong>Ограничить локации</strong><div class="muted">Настройки → Службы геолокации: установите для каждого приложения 'При использовании' или 'Никогда' — особенно для соцсетей и рекламных приложений.</div></div><label style="margin-left:auto"><input type="checkbox" class="chk" data-for="location"/></label></li>
+          <li data-key="ads"><div class="step"><strong>Отключить отслеживание рекламы</strong><div class="muted">Настройки → Конфиденциальность и безопасность → Реклама: включите 'Ограничить отслеживание рекламы' и сбросьте идентификатор рекламы при необходимости.</div></div><label style="margin-left:auto"><input type="checkbox" class="chk" data-for="ads"/></label></li>
+        </ul>
+      </details>
+
+      <p class="muted">Полезные ссылки: <a class="link-local" href="https://support.apple.com/ru-ru">Поддержка Apple</a> (для восстановления/Find My и т.д.).</p>
+    </section>
+
+    <section id="ipad" class="card">
+      <h2>Проверка iPad</h2>
+      <details open>
+        <summary><strong>Основные шаги</strong></summary>
+        <ul class="checklist">
+          <li><div class="step"><strong>Экран и сенсор</strong><div class="muted">Проверьте нажатия по всей площади, яркость, битые пиксели.</div></div></li>
+          <li><div class="step"><strong>Apple Pencil</strong><div class="muted">Подключите карандаш, проверьте заряд и чувствительность, тест в Notes.</div></div></li>
+          <li><div class="step"><strong>Камера и микрофон</strong><div class="muted">Сделайте фото и запись, тест на шумы.</div></div></li>
+          <li><div class="step"><strong>Smart Keyboard / клавиатура</strong><div class="muted">Проверьте контакты SmartConnector и работу клавиш.</div></div></li>
+        </ul>
+      </details>
+      <details>
+        <summary><strong>Приватность и оптимизация</strong></summary>
+        <ul class="checklist">
+          <li><div class="step">Дублирует шаги iPhone по отключению аналитики, локации и рекламы.</div></li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="watch" class="card">
+      <h2>Проверка Apple Watch</h2>
+      <details open>
+        <summary><strong>Основные проверки</strong></summary>
+        <ul class="checklist">
+          <li><div class="step"><strong>Сопряжение</strong><div class="muted">Проверьте, снимаются ли часы с предыдущего Apple ID и можно ли их сопрячь.</div></div></li>
+          <li><div class="step"><strong>Датчики</strong><div class="muted">Проверьте сердечный ритм, датчик SpO2 (если есть), акселерометр — выполните тренировку 1–2 минуты.</div></div></li>
+          <li><div class="step"><strong>Корпус и ремешки</strong><div class="muted">Оцените состояние: царапины, следы потёртостей и контакты зарядки.</div></div></li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Оптимизация и приватность — быстрые шаги</h2>
+      <ol>
+        <li>Настройки → Конфиденциальность и безопасность → Аналитика и улучшения: отключить реальные отправки.</li>
+        <li>Настройки → Siri и Поиск: отключить "Предлагать Siri" и "Использовать при блокировке", если нужно приватность.</li>
+        <li>Настройки → Конфиденциальность и безопасность → Локация: проверить для каждого приложения.</li>
+        <li>Настройки → Экранное время: включить при необходимости для проверки ограничений (можно временно включить для теста).</li>
+      </ol>
+      <p class="muted">Эти шаги помогут быстро уменьшить сбор аналитики и персонализацию.</p>
+    </section>
+
+    <section class="card">
+      <h2>Как сделать автономным на iPhone</h2>
+      <ol>
+        <li>Сохраните этот файл `index.html` в iCloud Drive или отправьте AirDrop/письмом себе.</li>
+        <li>Откройте файл в Safari (через iCloud Drive откройте, нажмите «Поделиться» → «Открыть в Safari»).</li>
+        <li>В Safari нажмите «Поделиться» → «На экран"Главный экран"» — появится иконка, сайт будет доступен офлайн как PWA.</li>
+      </ol>
+      <p class="muted">Если вы хотите полностью автономную работу без интернета, откройте файл локально: iOS Safari поддерживает просмотр локальных HTML при открытии из Файлы/ссылки.</p>
+    </section>
+
+    <section class="card">
+      <h2>Дополнительно</h2>
+      <p class="muted">Можно расширить сайт: добавить изображения шагов (скриншоты), встроить галочку/локальное состояние (localStorage) и генератор Shortcuts. Если хотите — добавлю скриншоты и шаблон Shortcut для быстрого запуска.</p>
+      <div style="margin-top:8px">
+        <a class="btn" id="saveState">Включить локальные отметки</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Сделано автономно — откройте и добавьте на главный экран. © Проверка Apple
+  </footer>
+
+  <script>
+    // Простая логика localStorage для сохранения чеков
+    document.getElementById('saveState').addEventListener('click', function(){
+      localStorage.setItem('apple_check_saved','1');
+      alert('Локальные отметки включены — браузер будет сохранять прогресс на этом устройстве.');
+    });
+
+    // Сохранять состояние чекбоксов
+    const checks = document.querySelectorAll('.chk');
+    checks.forEach(ch => {
+      const key = 'chk_'+(ch.dataset.for||'')
+      const val = localStorage.getItem(key);
+      if(val==='1') ch.checked = true;
+      ch.addEventListener('change', ()=>{
+        localStorage.setItem(key, ch.checked ? '1' : '0');
+      });
+    });
+
+    // Service worker регистрация
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('./sw.js').catch(()=>{/* ignore */});
+    }
+
+    // PWA install hint (Safari) — покажем подсказку
+    function showInstallHint(){
+      alert('Чтобы установить на главный экран: в Safari нажмите "Поделиться" → "На экран \"Дом\" (Add to Home Screen)'.replace('  ',' '));
+    }
+    // добавим кнопку-указание
+    const inst = document.createElement('a');
+    inst.className = 'btn';
+    inst.textContent = 'Как установить (iOS)';
+    inst.href = '#';
+    inst.onclick = function(e){ e.preventDefault(); showInstallHint(); };
+    document.querySelector('main.wrap').insertBefore(inst, document.querySelector('main.wrap').firstChild);
+  </script>
+</body>
+</html>

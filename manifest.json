@@ -1,0 +1,15 @@
+{
+  "name": "Чек‑лист проверки Apple (оффлайн)",
+  "short_name": "Проверка Apple",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbfbfd",
+  "theme_color": "#0ea5a4",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABFElEQVR4nO3WQQrAIBAEQb3/6arS1l2hBq0W7j8k0sYkz9QH8cQAAAAAAAAAAAAAA4G8Zk78s9mS3JvtxjafO9Y2z3H1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m55s0r3e2w6z3G2n1j6u2m5w6A7zIvy8Zk3XQAAAABJRU5ErkJggg==",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
