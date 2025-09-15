@@ -40,5 +40,15 @@
     </div>
     <footer>Если нужно — могу добавить printable checklist и более детальные инструкции для корпоративной политики приватности.</footer>
   </div>
-</body>
-</html>
+    <script>
+      // Apply persisted theme (keeps theme in sync with index.html)
+      (function(){
+        try{
+          const root = document.documentElement;
+          const saved = localStorage.getItem('theme')||'light';
+          if(saved==='dark') root.classList.add('dark'); else root.classList.remove('dark');
+        }catch(e){/* no localStorage */}
+      })();
+    </script>
+    </body>
+  </html>
