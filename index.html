@@ -29,14 +29,7 @@
       --header-to:#063447;
       --text:#e6f6f6;
     }
-    /* Dark-mode overrides for glass elements to keep good contrast */
-    :root.dark .device,
-    :root.dark section.card{
-      background:linear-gradient(180deg, rgba(6,12,18,0.5), rgba(6,12,18,0.35));
-      border:1px solid rgba(255,255,255,0.04);
-      box-shadow:0 10px 30px rgba(0,0,0,0.6);
-    }
-    :root.dark .chk-wrap{background:linear-gradient(180deg, rgba(8,40,48,0.6), rgba(6,30,38,0.45));}
+    /* dark theme uses root variables only (restored to previous readable style) */
     body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:var(--text);overflow-y:scroll;transition:background .24s,color .24s}
     /* animated gradient header */
     @keyframes headerGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
