@@ -1,14 +1,63 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shortcut — Инструкция</title></head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial; padding:20px;">
-  <h1>Установка Shortcut</h1>
-  <p>Чтобы быстро открыть чек-лист из приложения «Команды»:</p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Инструкция: Shortcut и проверка сайта</title>
+  <style>
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;line-height:1.5;margin:20px}
+    code{background:#f3f4f6;padding:2px 6px;border-radius:4px}
+    .note{background:#fff8db;border-left:4px solid #ffd54a;padding:10px;margin:12px 0}
+    .ok{color:green}
+    ol li{margin:8px 0}
+  </style>
+</head>
+<body>
+  <h1>Как подготовиться к тесту и установить Shortcut</h1>
+
+  <h2>Перед тестом (важно)</h2>
+  <div class="note">
+    <strong>Коротко:</strong>
+    <ul>
+      <li>Откройте сайт в <strong>Safari</strong> на iPhone/iPad первый раз при включённом интернете — так сработает регистрация service worker.</li>
+      <li>После первого открытия подождите ~3–5 секунд, затем закройте вкладку и добавьте сайт на главный экран (через кнопку «Поделиться» → «Добавить на экран «Домой»»).</li>
+      <li>Закрытие VS Code или компьютера не влияет — сайт размещён на GitHub Pages и доступен по публичному URL.</li>
+    </ul>
+  </div>
+
+  <h2>Установка Shortcut (быстрый способ открыть сайт)</h2>
+  <p>Если хотите открыть чек‑лист одной кнопкой через приложение «Команды»: выполните простые шаги ниже.</p>
   <ol>
-    <li>Откройте <strong>Команды</strong> → нажмите + → Добавить действие → найдите «Открыть URL».</li>
+    <li>Откройте приложение <strong>Команды</strong> на iPhone/iPad и нажмите «+» чтобы создать новый ярлык.</li>
+    <li>Добавьте действие <strong>Открыть URL</strong> (Open URL).</li>
     <li>Вставьте URL: <code>https://smolnikov6733-sketch.github.io/apple-check/</code></li>
-    <li>Сохраните ярлык и при желании добавьте на главный экран.</li>
+    <li>Сохраните ярлык. По желанию: через свойства ярлыка добавьте его на главный экран.</li>
   </ol>
-  <p>Скачать шаблон: <a href="/open-checklist.shortcut.txt" download>Скачать open-checklist.shortcut.txt</a></p>
+
+  <p>Скачать текстовый шаблон (можно открыть на компьютере и скопировать URL в Команды):
+    <a href="/open-checklist.shortcut.txt" download>Скачать open-checklist.shortcut.txt</a>
+  </p>
+
+  <h2>Пошаговая инструкция — как проверить сайт офлайн (iPhone / iPad)</h2>
+  <ol>
+    <li>Откройте в Safari <a href="https://smolnikov6733-sketch.github.io/apple-check/">https://smolnikov6733-sketch.github.io/apple-check/</a> (важно: Safari, не Chrome/Firefox).</li>
+    <li>Подождите несколько секунд, чтобы service worker установился (вы увидите быстрые сетевые запросы). Если появится окно с запросом на установку — разрешите.</li>
+    <li>Нажмите «Поделиться» → «Добавить на экран "Домой"» → подтвердите. Теперь у вас будет иконка приложения на рабочем столе.</li>
+    <li>Откройте сайт из иконки (не из Сафари). В режиме приложения (standalone) интерфейс должен работать так же.</li>
+    <li>Отметьте несколько пунктов чек‑листа (чек‑боксы). Подождите секунду — состояние сохраняется в локальном хранилище (localStorage).</li>
+    <li>Переключите телефон в Режим полёта (Airplane Mode) или отключите мобильный/wi‑fi — затем откройте приложение (иконку). Страница должна загрузиться из кэша и показать ранее отмеченные пункты.</li>
+    <li>Проверьте перезагрузку/закрытие: закройте приложение и снова откройте — отметки должны остаться.</li>
+    <li>Если что‑то не работает: откройте сайт снова в Safari с интернетом, дождитесь установки service worker, затем повторите шаги добавления на экран.</li>
+  </ol>
+
+  <h2>Короткие советы по отладке</h2>
+  <ul>
+    <li>Используйте Safari — iOS ограничивает PWA‑функции в сторонних браузерах.</li>
+    <li>Если при офлайн‑тесте страница не открывается, проверьте, что service worker зарегистрирован: откройте сайт онлайн и подождите ~5–10 секунд.</li>
+    <li>Чтобы полностью сбросить состояние страницы: Настройки → Safari → Дополнительно → Данные веб‑сайтов → удалить данные для сайта или удалить ярлык и заново добавить.</li>
+  </ul>
+
+  <p class="ok"><strong>Готово.</strong> После теста пришлите, пожалуйста, короткий фидбек: что именно не открылось или не сохранилось — поправлю быстро.</p>
+
 </body>
 </html>
