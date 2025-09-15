@@ -1,4 +1,4 @@
-const CACHE_NAME = 'apple-check-v5';
+const CACHE_NAME = 'apple-check-v6';
 const toCache = [
   './',
   './index.html',
